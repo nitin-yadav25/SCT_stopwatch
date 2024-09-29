@@ -1,48 +1,119 @@
+/* Apply the Roboto font from Google */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
 }
 
+/* Center the stopwatch container and add shadow */
 .stopwatch-container {
     text-align: center;
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
 }
 
+/* Style the title */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 1.5px;
+}
+
+/* Make the stopwatch display larger and bolder */
 #time-display {
-    font-size: 48px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00b4db;
+    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+}
+
+/* Style the buttons with smooth hover and active states */
+.buttons {
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 20px;
 }
 
-.buttons button {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 5px;
+button.btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 50px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
 }
 
-#start-pause { background-color: #4CAF50; color: white; }
-#reset { background-color: #f44336; color: white; }
-#lap { background-color: #008CBA; color: white; }
+button.start {
+    background-color: #4CAF50;
+    color: white;
+}
 
+button.reset {
+    background-color: #f44336;
+    color: white;
+}
+
+button.lap {
+    background-color: #008CBA;
+    color: white;
+}
+
+/* Button hover effects */
+button.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button active state */
+button.btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Style the laps list */
 ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 20px;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 ul li {
-    background-color: #ddd;
-    margin: 5px 0;
+    background-color: #f7f7f7;
+    color: #333;
     padding: 10px;
     border-radius: 5px;
+    margin: 5px 0;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+/* Laps hover effect */
+ul li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Add scrollbar to lap list */
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: #00b4db;
+    border-radius: 10px;
 }

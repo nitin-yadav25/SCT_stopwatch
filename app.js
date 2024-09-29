@@ -25,10 +25,12 @@ function startPauseTimer() {
     if (isRunning) {
         clearInterval(intervalId);
         startPauseButton.textContent = 'Start';
+        startPauseButton.classList.remove('active');
     } else {
         startTime = Date.now() - elapsedTime;
         intervalId = setInterval(updateTime, 10);
         startPauseButton.textContent = 'Pause';
+        startPauseButton.classList.add('active');
     }
     isRunning = !isRunning;
 }
@@ -37,6 +39,7 @@ function resetTimer() {
     clearInterval(intervalId);
     isRunning = false;
     startPauseButton.textContent = 'Start';
+    startPauseButton.classList.remove('active');
     elapsedTime = 0;
     display.textContent = '00:00:00.00';
     lapsList.innerHTML = '';
